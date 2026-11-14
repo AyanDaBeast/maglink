@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101827" />
+    <title>Maglink — Browser Torrent Player</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <p class="eyebrow">BROWSER TORRENT CLIENT</p>
+        <h1>Maglink</h1>
+        <p class="intro">Open a magnet link and play or save files that your browser can receive.</p>
+      </header>
+
+      <form id="magnetForm">
+        <label for="magnetInput">Magnet link</label>
+        <div class="input-row">
+          <input
+            id="magnetInput"
+            type="url"
+            placeholder="magnet:?xt=urn:btih:..."
+            autocomplete="off"
+            spellcheck="false"
+            required
+          />
+          <button id="loadButton" type="submit">Open magnet</button>
+        </div>
+      </form>
+
+      <section class="status-panel" aria-live="polite">
+        <div class="progress-heading">
+          <strong>Download progress</strong>
+          <span id="progressText">0%</span>
+        </div>
+        <progress id="progressBar" value="0" max="100">0%</progress>
+        <p id="statusText">Paste a magnet link to get started.</p>
+      </section>
+
+      <section class="files-panel">
+        <h2>Files</h2>
+        <ul id="fileList">
+          <li class="empty">Files will appear after torrent metadata loads.</li>
+        </ul>
+      </section>
+
+      <p class="note">
+        Browser torrenting only connects to peers that support WebRTC. Some torrents may have no
+        compatible peers. Use this only for content you have permission to access.
+      </p>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/webtorrent@latest/webtorrent.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
