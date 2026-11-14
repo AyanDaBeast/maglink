@@ -2,19 +2,19 @@
 
 A small browser-based WebTorrent demo for opening magnet links and accessing torrent files. Only use it with content you have permission to access.
 
-## Run in GitHub Codespaces
+## Run
 
-1. Open this repository in a Codespace. The dev container starts a static server on port `8000` and forwards the port automatically.
-2. Open the forwarded **Maglink web app** port from the Ports tab if it does not open automatically.
-3. Paste a `magnet:` link and select **Open magnet**.
-
-To start the server manually (for example, in a non-Codespaces environment):
+With Node.js 22 or newer installed, run:
 
 ```bash
-python3 -m http.server 8000 --bind 0.0.0.0
+npm start
 ```
 
-Then visit `http://localhost:8000`.
+Then open [http://localhost:8000](http://localhost:8000). No `npm install` is needed; the static web server uses Node.js built-ins.
+
+## Run in GitHub Codespaces
+
+Open this repository in a Codespace, then run `npm start` in the terminal. Codespaces forwards port `8000` and opens the app in a browser. If it does not, open the **Ports** tab and click the forwarded port.
 
 ## Browser and network limitations
 

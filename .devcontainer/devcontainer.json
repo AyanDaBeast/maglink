@@ -1,12 +1,11 @@
 {
   "name": "Maglink Codespace",
-  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
   "forwardPorts": [8000],
   "portsAttributes": {
     "8000": {
       "label": "Maglink web app",
       "onAutoForward": "openBrowser"
     }
-  },
-  "postStartCommand": "python3 -m http.server 8000 --bind 0.0.0.0 > /tmp/maglink-http.log 2>&1 &"
+  }
 }
